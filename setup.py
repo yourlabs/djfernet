@@ -13,4 +13,5 @@ setup(
     license='MIT',
     keywords='fernet cryptography django',
     python_requires='>=3.8',
+    packages=['fernet_fields'],
 )
