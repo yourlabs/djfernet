@@ -1,4 +1,4 @@
-Welcome to django-fernet-fields!
+Welcome to djfernet!
 ================================
 
 `Fernet`_ symmetric encryption for Django model fields, using the
@@ -11,7 +11,7 @@ Welcome to django-fernet-fields!
 Prerequisites
 -------------
 
-``django-fernet-fields`` supports `Django`_ 1.8.2 and later on Python 2.7, 3.3,
+``djfernet`` supports `Django`_ 1.8.2 and later on Python 2.7, 3.3,
 3.4, pypy, and pypy3.
 
 Only PostgreSQL, SQLite, and MySQL are tested, but any Django database backend
@@ -23,11 +23,11 @@ with support for ``BinaryField`` should work.
 Installation
 ------------
 
-``django-fernet-fields`` is available on `PyPI`_. Install it with::
+``djfernet`` is available on `PyPI`_. Install it with::
 
-    pip install django-fernet-fields
+    pip install djfernet
 
-.. _PyPI: https://pypi.python.org/pypi/django-fernet-fields/
+.. _PyPI: https://pypi.python.org/pypi/djfernet/
 
 
 Usage
@@ -83,7 +83,7 @@ non-nullable encrypted field.
 Keys
 ----
 
-By default, ``django-fernet-fields`` uses your ``SECRET_KEY`` setting as the
+By default, ``djfernet`` uses your ``SECRET_KEY`` setting as the
 encryption key.
 
 You can instead provide a list of keys in the ``FERNET_KEYS`` setting; the
@@ -110,7 +110,7 @@ Disabling HKDF
 ~~~~~~~~~~~~~~
 
 Fernet encryption requires a 32-bit url-safe base-64 encoded secret key. By
-default, ``django-fernet-fields`` uses `HKDF`_ to derive such a key from
+default, ``djfernet`` uses `HKDF`_ to derive such a key from
 whatever arbitrary secret key you provide.
 
 If you wish to disable HKDF and provide your own Fernet-compatible 32-bit
@@ -182,4 +182,4 @@ Contributing
 
 See the `contributing docs`_.
 
-.. _contributing docs: https://github.com/orcasgit/django-fernet-fields/blob/master/CONTRIBUTING.rst
+.. _contributing docs: https://github.com/orcasgit/djfernet/blob/master/CONTRIBUTING.rst

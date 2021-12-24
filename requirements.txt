@@ -1,4 +1,4 @@
-# Requirements for running django-fernet-fields tests
+# Requirements for running djfernet tests
 
 Django>=1.11
 

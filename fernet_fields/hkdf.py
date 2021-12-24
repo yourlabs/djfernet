@@ -6,9 +6,9 @@ from cryptography.hazmat.backends import default_backend
 from django.utils.encoding import force_bytes
 
 backend = default_backend()
-info = b'django-fernet-fields'
+info = b'djfernet'
 # We need reproducible key derivation, so we can't use a random salt
-salt = b'django-fernet-fields-hkdf-salt'
+salt = b'djfernet-hkdf-salt'
 
 
 def derive_fernet_key(input_key):

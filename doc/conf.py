@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# django-fernet-fields documentation build configuration file, created by
+# djfernet documentation build configuration file, created by
 # sphinx-quickstart on Mon May 25 12:37:44 2015.
 #
 # This file is execfile()d with the current directory set to its
@@ -43,7 +43,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'django-fernet-fields'
+project = 'djfernet'
 copyright = '2015, Carl Meyer'
 author = 'Carl Meyer'
 
@@ -197,7 +197,7 @@ html_theme = 'alabaster'
 #html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'django-fernet-fieldsdoc'
+htmlhelp_basename = 'djfernetdoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -221,8 +221,8 @@ latex_elements = {
 latex_documents = [
     (
         master_doc,
-        'django-fernet-fields.tex',
-        'django-fernet-fields Documentation',
+        'djfernet.tex',
+        'djfernet Documentation',
         'Carl Meyer',
         'manual',
     ),
@@ -256,8 +256,8 @@ latex_documents = [
 man_pages = [
     (
         master_doc,
-        'django-fernet-fields',
-        'django-fernet-fields Documentation',
+        'djfernet',
+        'djfernet Documentation',
         [author],
         1,
     )
@@ -275,10 +275,10 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        'django-fernet-fields',
-        'django-fernet-fields Documentation',
+        'djfernet',
+        'djfernet Documentation',
         author,
-        'django-fernet-fields',
+        'djfernet',
         'One line description of project.',
         'Miscellaneous',
     ),
