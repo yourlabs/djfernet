@@ -7,8 +7,8 @@ your issue fixed / pull request merged.
 Please file bugs and send pull requests to the `GitHub repository`_ and `issue
 tracker`_.
 
-.. _GitHub repository: https://github.com/orcasgit/djfernet/
-.. _issue tracker: https://github.com/orcasgit/djfernet/issues
+.. _GitHub repository: https://github.com/yourlabs/djfernet/
+.. _issue tracker: https://github.com/yourlabs/djfernet/issues
 
 
 

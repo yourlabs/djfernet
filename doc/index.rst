@@ -182,4 +182,4 @@ Contributing
 
 See the `contributing docs`_.
 
-.. _contributing docs: https://github.com/orcasgit/djfernet/blob/master/CONTRIBUTING.rst
+.. _contributing docs: https://github.com/yourlabs/djfernet/blob/master/CONTRIBUTING.rst
