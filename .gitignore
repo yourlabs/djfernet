@@ -6,3 +6,5 @@ dist/
 .coverage
 fernet_fields/test/settings/testdb.sqlite
 *.pyc
+.eggs
+djfernet.egg-info
