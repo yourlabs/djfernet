@@ -2,7 +2,7 @@ image: yourlabs/python
 
 test:
   stage: test
-  script: pip install . && ./runtests.py
+  script: pip install . django && ./runtests.py
 
 pypi:
   stage: deploy
