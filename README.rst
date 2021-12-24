@@ -2,7 +2,8 @@
 djfernet
 ========
 
-Maintained fork of github.com/yourlabs/djfernet/
+Maintained fork of github.com/orcasgit/django-fernet-fields used by
+yourlabs.io/oss/djwebdapp
 
 `Fernet`_ symmetric encryption for Django model fields, using the
 `cryptography`_ library.
