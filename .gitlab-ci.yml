@@ -1,0 +1,10 @@
+image: yourlabs/python
+
+test:
+  stage: test
+  script: pip install . django && ./runtests.py
+
+pypi:
+  stage: deploy
+  script: pypi-release
+  only: [tags]
