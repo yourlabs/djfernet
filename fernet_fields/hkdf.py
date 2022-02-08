@@ -3,12 +3,13 @@ import base64
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.kdf.hkdf import HKDF
 from cryptography.hazmat.backends import default_backend
+from django.conf import settings
 from django.utils.encoding import force_bytes
 
 backend = default_backend()
-info = b'djfernet'
+info = getattr(settings, 'DJFERNET_PREFIX', b'djfernet')
 # We need reproducible key derivation, so we can't use a random salt
-salt = b'djfernet-hkdf-salt'
+salt = getattr(settings, 'DJFERNET_PREFIX', b'djfernet') + b'-hkdf-salt'
 
 
 def derive_fernet_key(input_key):
