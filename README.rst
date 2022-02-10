@@ -17,10 +17,10 @@ with support for ``BinaryField`` should work.
 .. _Fernet: https://cryptography.io/en/latest/fernet/
 .. _cryptography: https://cryptography.io/en/latest/
 
-.. danger:: If you are migrating from django-fernet-fields, you need to add the
+.. danger:: If you have data created with djfernet < 0.8, you will need the
             following setting to be able to decrypt existing data:
-            ``DJFERNET_PREFIX = b'django-fernet-fields'``. Make sure you use a
-            bytestring right there with ``b'..'``!!
+            ``DJFERNET_PREFIX = b'djfernet'``. Make sure you use a bytestring
+            right there with ``b'..'``!!
 
 Getting Help
 ============
