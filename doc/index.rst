@@ -1,27 +1,18 @@
 Welcome to djfernet!
-================================
+~~~~~~~~~~~~~~~~~~~~
 
-`Fernet`_ symmetric encryption for Django model fields, using the
-`cryptography`_ library.
-
-.. _Fernet: https://cryptography.io/en/latest/fernet/
-.. _cryptography: https://cryptography.io/en/latest/
-
+.. include:: ../README.rst
 
 Prerequisites
--------------
-
-``djfernet`` supports `Django`_ 1.8.2 and later on Python 2.7, 3.3,
-3.4, pypy, and pypy3.
+=============
 
 Only PostgreSQL, SQLite, and MySQL are tested, but any Django database backend
 with support for ``BinaryField`` should work.
 
 .. _Django: http://www.djangoproject.com/
 
-
 Installation
-------------
+============
 
 ``djfernet`` is available on `PyPI`_. Install it with::
 
@@ -31,7 +22,7 @@ Installation
 
 
 Usage
------
+=====
 
 Just import and use the included field classes in your models::
 
@@ -52,7 +43,7 @@ field.
 
 
 Field types
-~~~~~~~~~~~
+-----------
 
 Several other field classes are included: ``EncryptedCharField``,
 ``EncryptedEmailField``, ``EncryptedIntegerField``, ``EncryptedDateField``, and
@@ -70,7 +61,7 @@ both ``EncryptedField`` and the other field class::
 
 
 Nullable fields
-~~~~~~~~~~~~~~~
+---------------
 
 Nullable encrypted fields are allowed; a ``None`` value in Python is translated
 to a real ``NULL`` in the database column. Note that this trivially reveals the
@@ -81,7 +72,7 @@ non-nullable encrypted field.
 
 
 Keys
-----
+====
 
 By default, ``djfernet`` uses your ``SECRET_KEY`` setting as the
 encryption key.
@@ -107,7 +98,7 @@ accessible::
 
 
 Disabling HKDF
-~~~~~~~~~~~~~~
+--------------
 
 Fernet encryption requires a 32-bit url-safe base-64 encoded secret key. By
 default, ``djfernet`` uses `HKDF`_ to derive such a key from
@@ -176,10 +167,6 @@ correctly. Instead, you'll need to do a three-step migration dance:
 3. Remove the old field and (if needed) rename the new encrypted field to the
    old field's name.
 
+.. include:: ../CONTRIBUTING.rst
 
-Contributing
-------------
-
-See the `contributing docs`_.
-
-.. _contributing docs: https://github.com/yourlabs/djfernet/blob/master/CONTRIBUTING.rst
+.. include:: ../CHANGES.rst

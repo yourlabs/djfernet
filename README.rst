@@ -32,12 +32,3 @@ This app is available on `PyPI`_ and can be installed with ``pip install
 djfernet``.
 
 .. _PyPI: https://pypi.python.org/pypi/djfernet/
-
-
-Contributing
-============
-
-See the `contributing docs`_.
-
-.. _contributing docs: https://yourlabs.io/oss/djfernet/blob/master/CONTRIBUTING.rst
-

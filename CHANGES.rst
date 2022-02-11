@@ -1,8 +1,5 @@
-CHANGES
-=======
-
-master (unreleased)
--------------------
+Changelog
+=========
 
 0.8.0
 -----
