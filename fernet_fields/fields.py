@@ -18,6 +18,7 @@ __all__ = [
     'EncryptedIntegerField',
     'EncryptedDateField',
     'EncryptedDateTimeField',
+    'EncryptedBinaryField',
 ]
 
 
@@ -129,4 +130,8 @@ class EncryptedDateField(EncryptedField, models.DateField):
 
 
 class EncryptedDateTimeField(EncryptedField, models.DateTimeField):
+    pass
+
+
+class EncryptedBinaryField(EncryptedField, models.BinaryField):
     pass

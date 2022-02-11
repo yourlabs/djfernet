@@ -7,9 +7,9 @@ from django.conf import settings
 from django.utils.encoding import force_bytes
 
 backend = default_backend()
-info = getattr(settings, 'DJFERNET_PREFIX', b'djfernet')
+info = getattr(settings, 'DJFERNET_PREFIX', b'django-fernet-fields')
 # We need reproducible key derivation, so we can't use a random salt
-salt = getattr(settings, 'DJFERNET_PREFIX', b'djfernet') + b'-hkdf-salt'
+salt = getattr(settings, 'DJFERNET_PREFIX', b'django-fernet-fields') + b'-hkdf-salt'
 
 
 def derive_fernet_key(input_key):
