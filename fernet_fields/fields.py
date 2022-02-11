@@ -18,6 +18,7 @@ __all__ = [
     'EncryptedIntegerField',
     'EncryptedDateField',
     'EncryptedDateTimeField',
+    'EncryptedBinaryField',
 ]
 
 
