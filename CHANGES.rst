@@ -4,6 +4,35 @@ CHANGES
 master (unreleased)
 -------------------
 
+0.8.0
+-----
+
+Switched back to django-fernet-fields for default salt, making it incompatible
+with 0.7.4! But, compatible with django-fernet-fields, so that you can migrate
+easily if you haven't already.
+
+If, unfortunnately, you have already deployed this in production, you have two
+options:
+
+- re-encrypt your data to use django-fernet-fields instead of djfernet,
+- or set settings.DJFERNET_PREFIX=djfernet to keep going
+
+Sorry about this laborious releases.
+
+Also, added EncryptedBinaryField.
+
+0.7.4
+-----
+
+First release since fork. Unfortunnately, my sed
+s/django-fernet-fields/djfernet/ caused a change in the salt, make it
+impossible to decrypt existing data!!
+
+Added settings.DJFERNET_PREFIX to set it to django-fernet-fields and make it
+compatible again through a setting.
+
+Thanks to @sevdog for the report.
+
 0.6 (2019.05.10)
 ----------------
 
