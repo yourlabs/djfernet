@@ -134,4 +134,6 @@ class EncryptedDateTimeField(EncryptedField, models.DateTimeField):
 
 
 class EncryptedBinaryField(EncryptedField, models.BinaryField):
-    pass
+    def from_db_value(self, value, expression, connection, *args):
+        if value is not None:
+            return self.to_python(self.fernet.decrypt(bytes(value)))
