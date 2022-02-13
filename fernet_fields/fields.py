@@ -77,7 +77,9 @@ class EncryptedField(models.Field):
     def from_db_value(self, value, expression, connection, *args):
         if value is not None:
             value = bytes(value)
-            return self.to_python(force_text(self.fernet.decrypt(value)))
+            value = self.fernet.decrypt(value)
+            value = force_text(value) if self.force_text else value
+            return value
 
     @cached_property
     def validators(self):
@@ -134,4 +136,4 @@ class EncryptedDateTimeField(EncryptedField, models.DateTimeField):
 
 
 class EncryptedBinaryField(EncryptedField, models.BinaryField):
-    pass
+    force_text = False
