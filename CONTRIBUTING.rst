@@ -53,7 +53,7 @@ user with create-database permissions. The tests will use a database named
 
 To run the tests once::
 
-    ./runtests.py
+    py.test
 
 To run tox (which runs the tests across all supported Python and Django
 versions) and generate a coverage report in the ``htmlcov/`` directory::
