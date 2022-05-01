@@ -149,7 +149,21 @@ class EncryptedDateTimeField(EncryptedField, models.DateTimeField):
     pass
 
 
-class EncryptedBinaryField(EncryptedField, models.BinaryField):
+class EncryptedBinaryField(EncryptedField, models.TextField):
+    """
+    We're going to use Python's binascii module to deal with binary data.
+    """
+
+    def get_db_prep_save(self, value, connection):
+        if value:
+            value = binascii.b2a_base64(value)
+        return super().get_db_prep_save(
+            value,
+            connection,
+        )
+
     def from_db_value(self, value, expression, connection, *args):
         if value is not None:
-            return self.to_python(self.fernet.decrypt(bytes(value)))
+            value = binascii.a2b_base64(bytes(value))
+            breakpoint()
+            return self.to_python(self.fernet.decrypt(value))
