@@ -1,4 +1,5 @@
-from cryptography.fernet import Fernet, MultiFernet
+import binascii
+from cryptography.fernet import Fernet, InvalidToken, MultiFernet
 
 from django.conf import settings
 from django.core.exceptions import FieldError, ImproperlyConfigured
@@ -75,9 +76,24 @@ class EncryptedField(models.Field):
             return connection.Database.Binary(retval)
 
     def from_db_value(self, value, expression, connection, *args):
-        if value is not None:
-            value = bytes(value)
-            return self.to_python(force_text(self.fernet.decrypt(value)))
+        if value is None:
+            return
+
+        value = bytes(value)
+        try:
+            decrypted = self.fernet.decrypt(value)
+        except InvalidToken:
+            message = [f'Could not decrypt {value}']
+            if getattr(settings, 'FERNET_KEYS', None):
+                message.append('with an FERNET_KEYS, are you missing one?')
+            else:
+                message.append(
+                    'with SECRET_KEY, has another process written data with a'
+                    'different SECRET_KEY? See documentation about Keys for'
+                    'details'
+                )
+            raise Exception(' '.join(message))
+        return self.to_python(force_text(decrypted))
 
     @cached_property
     def validators(self):
