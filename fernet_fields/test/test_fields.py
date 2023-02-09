@@ -68,6 +68,7 @@ class TestEncryptedField(object):
         (models.EncryptedEmail, ['a@example.com', 'b@example.com']),
         (models.EncryptedInt, [1, 2]),
         (models.EncryptedDate, [date(2015, 2, 5), date(2015, 2, 8)]),
+        (models.EncryptedJSON, [{'test': 1}, {'test': 1}]),
         (
             models.EncryptedDateTime,
             [datetime(2015, 2, 5, 15), datetime(2015, 2, 8, 16)],

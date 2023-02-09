@@ -19,6 +19,7 @@ __all__ = [
     'EncryptedDateField',
     'EncryptedDateTimeField',
     'EncryptedBinaryField',
+    'EncryptedJSONField',
 ]
 
 
@@ -76,8 +77,10 @@ class EncryptedField(models.Field):
 
     def from_db_value(self, value, expression, connection, *args):
         if value is not None:
-            value = bytes(value)
-            return self.to_python(force_text(self.fernet.decrypt(value)))
+            value = self.to_python(force_text(self.fernet.decrypt(bytes(value))))
+            return super(
+                EncryptedField, self
+            ).from_db_value(value, expression, connection, *args)
 
     @cached_property
     def validators(self):
@@ -134,6 +137,8 @@ class EncryptedDateTimeField(EncryptedField, models.DateTimeField):
 
 
 class EncryptedBinaryField(EncryptedField, models.BinaryField):
-    def from_db_value(self, value, expression, connection, *args):
-        if value is not None:
-            return self.to_python(self.fernet.decrypt(bytes(value)))
+    pass
+
+
+class EncryptedJSONField(EncryptedField, models.JSONField):
+    pass

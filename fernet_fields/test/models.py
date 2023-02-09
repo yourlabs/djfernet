@@ -29,3 +29,7 @@ class EncryptedDateTime(models.Model):
 
 class EncryptedNullable(models.Model):
     value = fields.EncryptedIntegerField(null=True)
+
+
+class EncryptedJSON(models.Model):
+    value = fields.EncryptedJSONField()
