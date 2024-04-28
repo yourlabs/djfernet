@@ -1,8 +1,10 @@
 Changelog
 =========
 
-master
-------
+0.9.0
+-----
+
+Thanks to @irtazaakram
 
 - Add support for Django 3.2, 4.1 & 4.2
 - Add support for Python 3.8, 3.9, 3.10 & 3.11
@@ -10,6 +12,10 @@ master
 - Drop support for Python 2.7, 3.5, 3.6 & 3.7
 - Shifted CI from travis/gitlab to github actions
 
+0.8.1
+-----
+
+- Don't convert binary to text
 
 0.8.0
 -----
