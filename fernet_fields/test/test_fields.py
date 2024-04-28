@@ -8,7 +8,7 @@ from django.db import connection, models as dj_models
 from django.utils.encoding import force_bytes
 
 import fernet_fields as fields
-from fernet_fields.utils import force_text
+from django.utils.encoding import force_str
 
 from . import models
 
@@ -82,7 +82,7 @@ class TestEncryptedFieldQueries(object):
         with connection.cursor() as cur:
             cur.execute('SELECT value FROM %s' % model._meta.db_table)
             data = [
-                force_text(field.fernet.decrypt(force_bytes(r[0])))
+                force_str(field.fernet.decrypt(force_bytes(r[0])))
                 for r in cur.fetchall()
             ]
 

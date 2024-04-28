@@ -1,6 +1,16 @@
 Changelog
 =========
 
+master
+------
+
+- Add support for Django 3.2, 4.1 & 4.2
+- Add support for Python 3.8, 3.9, 3.10 & 3.11
+- Drop support for Django 1.11, 2.1, 2.2 & 3.0
+- Drop support for Python 2.7, 3.5, 3.6 & 3.7
+- Shifted CI from travis/gitlab to github actions
+
+
 0.8.0
 -----
 
